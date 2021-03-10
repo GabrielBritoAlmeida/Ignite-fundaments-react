@@ -1,11 +1,11 @@
-export function RepositoryItem({ repository, description, link }) {
+export function RepositoryItem({ repository }) {
   return (
     <li>
-      <strong>{repository}</strong>
+      <strong>{repository?.name}</strong>
 
-      <p>{description}</p>
+      <p>{repository?.description}</p>
 
-      <a href={link}>Acessar repositórios</a>
+      <a href={repository?.html_url}>Acessar repositórios</a>
     </li>
   );
 }

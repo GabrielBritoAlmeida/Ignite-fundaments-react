@@ -1,0 +1,68 @@
+// iniciando projeto 
+
+yarn init -y 
+
+// Instalando react
+
+yarn add react
+
+// react-dom
+
+yarn add react-dom
+
+// Babel
+
+yarn add @babel/core @babel/cli @babel/preset-env - D
+
+// Rodando babel
+
+yarn babel src/index.js --out-file dist/bundle.js
+
+// Babel preset react
+
+yarn add @babel/preset-react -dist
+
+// Webpack
+
+yarn add webpack webpack-cli -D
+
+
+//Babel Loader
+
+yarn add babel-loader -D
+
+// Atalho para arquivo bundle
+
+yarn add html-webpack-plugin -D
+
+// Webpack Server
+
+yarn add webpack-dev-server -D
+depois execute yarn webpack serve
+
+
+//Configurando  eval-source-map, melhorando forma de ver o erro
+
+dentro do webpack, inserir -> devtool: "eval-source-map"
+
+//Variável de ambiente
+
+yarn add cross-env -D
+Inserir no package.json: 
+"scripts": {
+    "dev": "webpack serve",
+    "build": "cross-env NODE_ENV=production webpack"
+  },
+
+// CSS configurando Webpack
+
+yarn add style-loader css-loader -D
+
+// Sass - CSS
+
+yarn add sass-loader -D
+Depois adiciona ao webpack
+
+yarn add node-sass -D
+
+//

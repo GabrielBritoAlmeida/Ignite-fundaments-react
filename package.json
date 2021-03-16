@@ -8,12 +8,10 @@
     "build": "cross-env NODE_ENV=production webpack"
   },
   "dependencies": {
-    "-": "^0.0.1",
     "@babel/cli": "^7.13.10",
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
     "@babel/preset-react": "^7.12.13",
-    "D": "^1.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },

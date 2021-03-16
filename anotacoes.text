@@ -65,4 +65,8 @@ Depois adiciona ao webpack
 
 yarn add node-sass -D
 
+// Typescript 
+yarn add typescript --dev
+yarn tsc
+
 //

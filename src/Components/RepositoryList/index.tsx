@@ -22,11 +22,11 @@ export function RepositoryList() {
   }, []);
 
   useEffect(() => {
-    const listCurrent = repositories.map((repository) => (
-      <RepositoryItem key={repository.name} repository={repository} />
-    ));
-
-    if (listCurrent) setList(listCurrent);
+    setList(
+      repositories.map((repository) => (
+        <RepositoryItem key={repository.name} repository={repository} />
+      ))
+    );
   }, [repositories]);
 
   if (list.length === 0) return <p>carregando...</p>;

@@ -66,7 +66,32 @@ Depois adiciona ao webpack
 yarn add node-sass -D
 
 // Typescript 
-yarn add typescript --dev
+yarn add typescript -D
+yarn add @typescript/react-dom -D
+yarn add @typescript/react -D
 yarn tsc
+
+Adicionar seguinte código: 
+
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src"]
+}
+
 
 //

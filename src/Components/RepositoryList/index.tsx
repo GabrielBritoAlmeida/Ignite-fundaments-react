@@ -1,13 +1,19 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Counter } from "../Counter";
 import { RepositoryItem } from "../RepositoryItem";
 
 import "../../styles/repositories.scss";
 
+type Repository = {
+  name: string;
+  description: string;
+  html_url: string;
+};
+
 export function RepositoryList() {
-  const [repositories, setRepositories] = useState([]);
-  const [list, setList] = useState([]);
+  const [repositories, setRepositories] = useState<Repository[]>([]);
+  const [list, setList] = useState<React.ReactNode[]>([]);
 
   useEffect(() => {
     fetch("https://api.github.com/orgs/rocketseat/repos")
@@ -16,11 +22,11 @@ export function RepositoryList() {
   }, []);
 
   useEffect(() => {
-    setList(
-      repositories.map((repo) => (
-        <RepositoryItem key={repo.name} repository={repo} />
-      ))
-    );
+    const listCurrent = repositories.map((repository) => (
+      <RepositoryItem key={repository.name} repository={repository} />
+    ));
+
+    if (listCurrent) setList(listCurrent);
   }, [repositories]);
 
   if (list.length === 0) return <p>carregando...</p>;
